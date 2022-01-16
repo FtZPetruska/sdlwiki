@@ -43,20 +43,20 @@ This function is available since SDL 2.0.0.
 
 == Code Examples ==
 
-<syntaxhighlight lang='c++'>
+<syntaxhighlight lang='c'>
 int secs, pct;
 if (SDL_GetPowerInfo(&secs, &pct) == SDL_POWERSTATE_ON_BATTERY) {
-    printf("Battery is draining: ");
+    SDL_Log("Battery is draining:\n");
     if (secs == -1) {
-        printf("(unknown time left)\n");
+        SDL_Log("- unknown time left\n");
     } else {
-        printf("(%d seconds left)\n", secs);
+        SDL_Log("- %d seconds left\n", secs);
     }
 
     if (pct == -1) {
-        printf("(unknown percentage left)\n");
+        SDL_Log("- unknown percentage left\n");
     } else {
-        printf("(%d percent left)\n", pct);
+        SDL_Log("- %d percent left\n", pct);
     }
 }
 </syntaxhighlight>
